@@ -16,6 +16,8 @@
     --bg-secondary: #ffffff;
     --text-primary: #1a1a1a;
     --text-secondary: #555555;
+    --accent-gold: #c9a84c;
+    --accent-purple: #6b4e8d;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -76,6 +78,7 @@ header.scrolled {
 }
 [data-theme="light"] header.scrolled {
     background: rgba(245, 245, 245, 0.95);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
 }
 .header-inner {
     max-width: 1400px;
@@ -175,6 +178,9 @@ nav a:hover::after { width: 100%; }
     width: 100%; height: 100%;
     background: linear-gradient(135deg, #1a0b2e 0%, #0d0d0d 100%);
     z-index: -2;
+}
+[data-theme="light"] .hero-bg {
+    background: linear-gradient(135deg, #e8e8e8 0%, #f5f5f5 100%);
 }
 .hero-geometry {
     position: absolute;
@@ -335,6 +341,9 @@ section {
     align-items: center;
     justify-content: center;
 }
+[data-theme="light"] .story-cover {
+    background: #e0e0e0;
+}
 .story-cover-placeholder {
     color: #555;
     font-size: 3rem;
@@ -424,6 +433,12 @@ section {
     color: var(--text-primary);
     font-family: var(--font-body);
     border-radius: 4px;
+}
+[data-theme="light"] .form-group input,
+[data-theme="light"] .form-group textarea,
+[data-theme="light"] .form-group select {
+    background: #ffffff;
+    color: #1a1a1a;
 }
 .form-group textarea {
     resize: vertical;
@@ -556,6 +571,9 @@ section {
     align-items: center;
     justify-content: center;
 }
+[data-theme="light"] .track-cover {
+    background: #e0e0e0;
+}
 .track-cover-placeholder {
     color: #555;
     font-size: 3rem;
@@ -584,6 +602,9 @@ section {
     gap: 1rem;
     margin-bottom: 1rem;
 }
+[data-theme="light"] .custom-player {
+    background: #e8e8e8;
+}
 .play-btn {
     background: var(--accent-gold);
     border: none;
@@ -608,6 +629,9 @@ section {
     cursor: pointer;
     position: relative;
     overflow: hidden;
+}
+[data-theme="light"] .progress-container {
+    background: rgba(0,0,0,0.1);
 }
 .progress-bar {
     height: 100%;
@@ -692,6 +716,9 @@ section {
     align-items: center;
     justify-content: center;
     position: relative;
+}
+[data-theme="light"] .gallery-item {
+    background: #e0e0e0;
 }
 .gallery-item img {
     width: 100%; height: 100%;

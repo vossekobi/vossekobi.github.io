@@ -105,18 +105,44 @@ function saveImages() {
     renderGallery();
 }
 
+// ===== FILE TO BASE64 =====
+function fileToBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+    });
+}
+
 // ===== STORY FUNCTIONS =====
 function openStoryForm() {
+    document.getElementById('storyForm').reset();
     storyFormModal.classList.add('active');
 }
 
-document.getElementById('storyForm').addEventListener('submit', (e) => {
+document.getElementById('storyForm').addEventListener('submit', async (e) => {
     e.preventDefault();
+    let text = document.getElementById('storyText').value;
+    let image = document.getElementById('storyImage').value || 'https://placehold.co/400x300/1a1a1a/c9a84c?text=Story';
+
+    // Load text from file if provided
+    const textFile = document.getElementById('storyTextFile').files[0];
+    if (textFile) {
+        text = await textFile.text();
+    }
+
+    // Load image from file if provided
+    const imageFile = document.getElementById('storyImageFile').files[0];
+    if (imageFile) {
+        image = await fileToBase64(imageFile);
+    }
+
     const story = {
         id: Date.now(),
         title: document.getElementById('storyTitle').value,
-        text: document.getElementById('storyText').value,
-        image: document.getElementById('storyImage').value || 'https://placehold.co/400x300/1a1a1a/c9a84c?text=Story'
+        text: text,
+        image: image
     };
     stories.push(story);
     saveStories();
@@ -133,7 +159,7 @@ function renderStories() {
     grid.innerHTML = stories.map(story => `
         <div class="story-card">
             <div class="story-cover">
-                <img src="${story.image}" alt="${story.title}">
+                <img src="${story.image}" alt="${story.title}" onerror="this.src='https://placehold.co/400x300/1a1a1a/c9a84c?text=Story'">
             </div>
             <div class="story-content">
                 <h3 class="story-title">${story.title}</h3>
@@ -162,7 +188,6 @@ function editStory(id) {
     if (story) {
         document.getElementById('storyTitle').value = story.title;
         document.getElementById('storyText').value = story.text;
-        document.getElementById('storyImage').value = story.image;
         deleteStory(id);
         storyFormModal.classList.add('active');
     }
@@ -175,17 +200,33 @@ function deleteStory(id) {
 
 // ===== TRACK FUNCTIONS =====
 function openTrackForm() {
+    document.getElementById('trackForm').reset();
     trackFormModal.classList.add('active');
 }
 
-document.getElementById('trackForm').addEventListener('submit', (e) => {
+document.getElementById('trackForm').addEventListener('submit', async (e) => {
     e.preventDefault();
+    let url = document.getElementById('trackUrl').value;
+    let cover = document.getElementById('trackCover').value || 'https://placehold.co/300x300/1a1a1a/c9a84c?text=Track';
+
+    // Load music from file if provided
+    const audioFile = document.getElementById('trackFile').files[0];
+    if (audioFile) {
+        url = await fileToBase64(audioFile);
+    }
+
+    // Load cover from file if provided
+    const coverFile = document.getElementById('trackCoverFile').files[0];
+    if (coverFile) {
+        cover = await fileToBase64(coverFile);
+    }
+
     const track = {
         id: Date.now(),
         title: document.getElementById('trackTitle').value,
         artist: document.getElementById('trackArtist').value,
-        url: document.getElementById('trackUrl').value,
-        cover: document.getElementById('trackCover').value || 'https://placehold.co/300x300/1a1a1a/c9a84c?text=Track'
+        url: url,
+        cover: cover
     };
     tracks.push(track);
     saveTracks();
@@ -202,19 +243,19 @@ function renderTracks() {
     container.innerHTML = tracks.map(track => `
         <div class="track-card">
             <div class="track-cover">
-                <img src="${track.cover}" alt="${track.title}">
+                <img src="${track.cover}" alt="${track.title}" onerror="this.src='https://placehold.co/300x300/1a1a1a/c9a84c?text=Track'">
             </div>
             <h3 class="track-title">${track.title}</h3>
             <p class="track-artist">${track.artist}</p>
             <div class="custom-player">
-                <button class="play-btn" onclick="playTrack('${track.url}')">
+                <button class="play-btn" onclick="playTrack('${track.url}',.url)">
                     <i data-lucide="play"></i>
                 </button>
                 <div class="progress-container">
                     <div class="progress-bar"></div>
                 </div>
             </div>
-            <a href="${track.url}" class="track-link" target="_blank">${currentLang === 'en' ? 'Listen on platform' : 'Слухати'}</a>
+            <a href="${track.url}" class="track-link" target="_blank" download>${currentLang === 'en' ? 'Download' : 'Завантажити'}</a>
             <div class="track-actions">
                 <button class="track-delete-btn" onclick="deleteTrack(${track.id})">${currentLang === 'en' ? 'Delete' : 'Видалити'}</button>
             </div>
@@ -229,19 +270,33 @@ function deleteTrack(id) {
 }
 
 function playTrack(url) {
-    window.open(url, '_blank');
+    // If it's a data URL (Base64), use it directly in audio player
+    const audio = new Audio(url);
+    audio.play().catch(err => {
+        // If direct play fails, open download link
+        window.open(url, '_blank');
+    });
 }
 
 // ===== IMAGE FUNCTIONS =====
 function openImageForm() {
+    document.getElementById('imageForm').reset();
     imageFormModal.classList.add('active');
 }
 
-document.getElementById('imageForm').addEventListener('submit', (e) => {
+document.getElementById('imageForm').addEventListener('submit', async (e) => {
     e.preventDefault();
+    let url = document.getElementById('imageUrl').value;
+
+    // Load image from file (required)
+    const imageFile = document.getElementById('imageFile').files[0];
+    if (imageFile) {
+        url = await fileToBase64(imageFile);
+    }
+
     const image = {
         id: Date.now(),
-        url: document.getElementById('imageUrl').value,
+        url: url,
         category: document.getElementById('imageCategory').value
     };
     images.push(image);

@@ -163,8 +163,13 @@
                     <textarea id="storyText" rows="6" required></textarea>
                 </div>
                 <div class="form-group">
-                    <label data-en="Image URL" data-uk="URL зображення">URL зображення</label>
+                    <label data-en="Or upload text file" data-uk="Або завантажте текстовий файл">Або завантажте текстовий файл</label>
+                    <input type="file" id="storyTextFile" accept=".txt">
+                </div>
+                <div class="form-group">
+                    <label data-en="Image URL or upload" data-uk="URL зображення або завантажте">URL зображення або завантажте</label>
                     <input type="url" id="storyImage" placeholder="https://example.com/image.jpg">
+                    <input type="file" id="storyImageFile" accept="image/*" style="margin-top: 0.5rem;">
                 </div>
                 <button type="submit" class="hero-btn" data-en="Save Story" data-uk="Зберегти історію">Зберегти історію</button>
             </form>
@@ -186,12 +191,14 @@
                     <input type="text" id="trackArtist" required>
                 </div>
                 <div class="form-group">
-                    <label data-en="Music URL" data-uk="URL музики">URL музики</label>
-                    <input type="url" id="trackUrl" placeholder="https://example.com/song.mp3" required>
+                    <label data-en="Music URL or upload file" data-uk="URL музики або завантажте файл">URL музики або завантажте файл</label>
+                    <input type="url" id="trackUrl" placeholder="https://example.com/song.mp3">
+                    <input type="file" id="trackFile" accept="audio/*" style="margin-top: 0.5rem;">
                 </div>
                 <div class="form-group">
-                    <label data-en="Cover Image URL" data-uk="URL обкладинки">URL обкладинки</label>
+                    <label data-en="Cover Image URL or upload" data-uk="URL обкладинки або завантажте">URL обкладинки або завантажте</label>
                     <input type="url" id="trackCover" placeholder="https://example.com/cover.jpg">
+                    <input type="file" id="trackCoverFile" accept="image/*" style="margin-top: 0.5rem;">
                 </div>
                 <button type="submit" class="hero-btn" data-en="Save Music" data-uk="Зберегти музику">Зберегти музику</button>
             </form>
@@ -205,8 +212,9 @@
             <h2 class="modal-title" data-en="Add Image" data-uk="Додати зображення">Додати зображення</h2>
             <form id="imageForm">
                 <div class="form-group">
-                    <label data-en="Image URL" data-uk="URL зображення">URL зображення</label>
-                    <input type="url" id="imageUrl" placeholder="https://example.com/image.jpg" required>
+                    <label data-en="Image URL or upload" data-uk="URL зображення або завантажте">URL зображення або завантажте</label>
+                    <input type="url" id="imageUrl" placeholder="https://example.com/image.jpg">
+                    <input type="file" id="imageFile" accept="image/*" style="margin-top: 0.5rem;" required>
                 </div>
                 <div class="form-group">
                     <label data-en="Category" data-uk="Категорія">Категорія</label>
