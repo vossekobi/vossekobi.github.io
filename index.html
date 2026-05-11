@@ -32,11 +32,11 @@
             <a href="#" class="logo">VOSS <span>EKOBI</span></a>
             <nav>
                 <ul>
-                    <li><a href="#about">Про мене</a></li>
-                    <li><a href="#stories">Історії</a></li>
-                    <li><a href="#music">Музика</a></li>
-                    <li><a href="#gallery">Галерея</a></li>
-                    <li><a href="#contact">Контакти</a></li>
+                    <li><a href="#about" data-en="About" data-uk="Про мене">Про мене</a></li>
+                    <li><a href="#stories" data-en="Stories" data-uk="Історії">Історії</a></li>
+                    <li><a href="#music" data-en="Music" data-uk="Музика">Музика</a></li>
+                    <li><a href="#gallery" data-en="Gallery" data-uk="Галерея">Галерея</a></li>
+                    <li><a href="#contact" data-en="Contact" data-uk="Контакти">Контакти</a></li>
                 </ul>
             </nav>
             <div class="header-controls">
@@ -57,24 +57,24 @@
         <div class="hero-geometry" id="heroGeometry"></div>
         <div class="hero-content">
             <h1 class="hero-title">VOSS EKOBI</h1>
-            <p class="hero-subtitle">ІСТОРІЇ • ЗВУКИ • ОБРАЗИ</p>
-            <a href="#about" class="hero-btn">ДІЗНАТИСЯ БІЛЬШЕ</a>
+            <p class="hero-subtitle" data-en="STORIES • SOUNDS • VISIONS" data-uk="ІСТОРІЇ • ЗВУКИ • ОБРАЗИ">ІСТОРІЇ • ЗВУКИ • ОБРАЗИ</p>
+            <a href="#about" class="hero-btn" data-en="DISCOVER MORE" data-uk="ДІЗНАТИСЯ БІЛЬШЕ">ДІЗНАТИСЯ БІЛЬШЕ</a>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about-section">
-        <h2 class="section-title">Про мене</h2>
+        <h2 class="section-title" data-en="About Me" data-uk="Про мене">Про мене</h2>
         <div class="about">
             <div class="about-image">
                 <img src="https://placehold.co/500x500/1a1a1a/c9a84c?text=Voss+Ekobi" alt="Voss Ekobi">
             </div>
             <div class="about-content">
-                <p>Привіт! Я мультидисциплінарний митець, котрий працює на перетині літератури, музики та візуального мистецтва.</p>
-                <p>Мої роботи досліджують глибокі людські емоції, складні соціальні явища та незвідані куточки внутрішнього світу.</p>
-                <p>Кожна історія, кожна композиція, кожен образ — це запрошення до діалогу, спроба розділити те, що боліло, радувало, або спантеличило мене.</p>
-                <div class="about-quote">
-                    "Мистецтво — це розмова без слів, яка одночасно говорить усім мовам"
+                <p data-en="Hello! I am a multidisciplinary artist working at the intersection of literature, music and visual art." data-uk="Привіт! Я мультидисциплінарний митець, котрий працює на перетині літератури, музики та візуального мистецтва.">Привіт! Я мультидисциплінарний митець, котрий працює на перетині літератури, музики та візуального мистецтва.</p>
+                <p data-en="My works explore deep human emotions, complex social phenomena and unknown corners of the inner world." data-uk="Мої роботи досліджують глибокі людські емоції, складні соціальні явища та невідані куточки внутрішнього світу.">Мої роботи досліджують глибокі людські емоції, складні соціальні явища та невідані куточки внутрішнього світу.</p>
+                <p data-en="Each story, each composition, each image is an invitation to dialogue, an attempt to share what hurt, pleased, or confused me." data-uk="Кожна історія, кожна композиція, кожен образ — це запрошення до діалогу, спроба розділити те, що болило, радувало, абощо спантеличило мене.">Кожна історія, кожна композиція, кожен образ — це запрошення до діалогу, спроба розділити те, що болило, радувало, абощо спантеличило мене.</p>
+                <div class="about-quote" data-en="Art is a conversation without words that speaks all languages" data-uk="Мистецтво — це розмова без слів, яка одночасно говорить усім мовам">
+                    Мистецтво — це розмова без слів, яка одночасно говорить усім мовам
                 </div>
             </div>
         </div>
@@ -82,52 +82,55 @@
 
     <!-- Stories Section -->
     <section id="stories" class="stories-section">
-        <h2 class="section-title">Історії</h2>
+        <h2 class="section-title" data-en="Stories" data-uk="Історії">Історії</h2>
+        <button class="hero-btn" onclick="openStoryForm()" style="margin: 0 auto 2rem; display: block;"><span data-en="+ Add Story" data-uk="+ Додати історію">+ Додати історію</span></button>
         <div class="stories-grid" id="storiesGrid">
-            <div class="empty-state">
+            <div class="empty-state" style="grid-column: 1 / -1;">
                 <div class="empty-state-icon">📖</div>
-                <p>Історії будуть додані незабаром</p>
+                <p data-en="Stories coming soon" data-uk="Історії скоро будуть додані">Історії скоро будуть додані</p>
             </div>
         </div>
     </section>
 
     <!-- Music Section -->
     <section id="music" class="music-section">
-        <h2 class="section-title">Музика</h2>
+        <h2 class="section-title" data-en="Music" data-uk="Музика">Музика</h2>
+        <button class="hero-btn" onclick="openTrackForm()" style="margin: 0 auto 2rem; display: block;"><span data-en="+ Add Music" data-uk="+ Додати музику">+ Додати музику</span></button>
         <div class="music-container" id="musicContainer">
-            <div class="music-empty">
-                <p>🎵 Музичні композиції будуть додані незабаром</p>
+            <div class="music-empty" style="width: 100%;">
+                <p data-en="🎵 Music coming soon" data-uk="🎵 Музичні композиції скоро будуть додані">🎵 Музичні композиції скоро будуть додані</p>
             </div>
         </div>
     </section>
 
     <!-- Gallery Section -->
     <section id="gallery" class="gallery-section">
-        <h2 class="section-title">Галерея</h2>
+        <h2 class="section-title" data-en="Gallery" data-uk="Галерея">Галерея</h2>
+        <button class="hero-btn" onclick="openImageForm()" style="margin: 0 auto 2rem; display: block;"><span data-en="+ Add Image" data-uk="+ Додати зображення">+ Додати зображення</span></button>
         <div class="gallery-filters">
-            <button class="filter-btn active" data-filter="all">Все</button>
-            <button class="filter-btn" data-filter="photography">Фотографія</button>
-            <button class="filter-btn" data-filter="design">Дизайн</button>
-            <button class="filter-btn" data-filter="art">Мистецтво</button>
+            <button class="filter-btn active" data-filter="all" data-en="All" data-uk="Усі">Усі</button>
+            <button class="filter-btn" data-filter="photography" data-en="Photography" data-uk="Фотографія">Фотографія</button>
+            <button class="filter-btn" data-filter="design" data-en="Design" data-uk="Дизайн">Дизайн</button>
+            <button class="filter-btn" data-filter="art" data-en="Art" data-uk="Мистецтво">Мистецтво</button>
         </div>
         <div class="gallery-grid" id="galleryGrid">
-            <div class="empty-state">
+            <div class="empty-state" style="grid-column: 1 / -1;">
                 <div class="empty-state-icon">🖼️</div>
-                <p>Галерея скоро буде заповнена</p>
+                <p data-en="Gallery coming soon" data-uk="Галерея скоро буде заповнена">Галерея скоро буде заповнена</p>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
-        <h2 class="section-title">Контакти</h2>
+        <h2 class="section-title" data-en="Contact" data-uk="Контакти">Контакти</h2>
         <div class="contact-content">
-            <p>Бажаєте обговорити проект або просто поговорити?</p>
+            <p data-en="Want to discuss a project or just chat?" data-uk="Бажаєте обговорити проект або просто поговорити?">Бажаєте обговорити проект або просто поговорити?</p>
             <div class="contact-links">
-                <a href="mailto:contact@vossekobi.com" class="contact-link">✉️ Email</a>
-                <a href="https://twitter.com" target="_blank" class="contact-link">𝕏 Twitter</a>
-                <a href="https://instagram.com" target="_blank" class="contact-link">📷 Instagram</a>
-                <a href="https://linkedin.com" target="_blank" class="contact-link">💼 LinkedIn</a>
+                <a href="mailto:contact@vossekobi.com" class="contact-link" data-en="✉️ Email" data-uk="✉️ Email">✉️ Email</a>
+                <a href="https://twitter.com" target="_blank" class="contact-link" data-en="𝕏 Twitter" data-uk="𝕏 Twitter">𝕏 Twitter</a>
+                <a href="https://instagram.com" target="_blank" class="contact-link" data-en="📷 Instagram" data-uk="📷 Instagram">📷 Instagram</a>
+                <a href="https://linkedin.com" target="_blank" class="contact-link" data-en="💼 LinkedIn" data-uk="💼 LinkedIn">💼 LinkedIn</a>
             </div>
         </div>
     </section>
@@ -145,9 +148,82 @@
         </div>
     </div>
 
+    <!-- Story Form Modal -->
+    <div class="modal" id="storyFormModal">
+        <div class="modal-content">
+            <button class="modal-close" id="formClose1">×</button>
+            <h2 class="modal-title" data-en="Add Story" data-uk="Додати історію">Додати історію</h2>
+            <form id="storyForm">
+                <div class="form-group">
+                    <label data-en="Title" data-uk="Назва">Назва</label>
+                    <input type="text" id="storyTitle" required>
+                </div>
+                <div class="form-group">
+                    <label data-en="Story Text" data-uk="Текст історії">Текст історії</label>
+                    <textarea id="storyText" rows="6" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label data-en="Image URL" data-uk="URL зображення">URL зображення</label>
+                    <input type="url" id="storyImage" placeholder="https://example.com/image.jpg">
+                </div>
+                <button type="submit" class="hero-btn" data-en="Save Story" data-uk="Зберегти історію">Зберегти історію</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Track Form Modal -->
+    <div class="modal" id="trackFormModal">
+        <div class="modal-content">
+            <button class="modal-close" id="formClose2">×</button>
+            <h2 class="modal-title" data-en="Add Music" data-uk="Додати музику">Додати музику</h2>
+            <form id="trackForm">
+                <div class="form-group">
+                    <label data-en="Song Title" data-uk="Назва треку">Назва треку</label>
+                    <input type="text" id="trackTitle" required>
+                </div>
+                <div class="form-group">
+                    <label data-en="Artist" data-uk="Виконавець">Виконавець</label>
+                    <input type="text" id="trackArtist" required>
+                </div>
+                <div class="form-group">
+                    <label data-en="Music URL" data-uk="URL музики">URL музики</label>
+                    <input type="url" id="trackUrl" placeholder="https://example.com/song.mp3" required>
+                </div>
+                <div class="form-group">
+                    <label data-en="Cover Image URL" data-uk="URL обкладинки">URL обкладинки</label>
+                    <input type="url" id="trackCover" placeholder="https://example.com/cover.jpg">
+                </div>
+                <button type="submit" class="hero-btn" data-en="Save Music" data-uk="Зберегти музику">Зберегти музику</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Image Form Modal -->
+    <div class="modal" id="imageFormModal">
+        <div class="modal-content">
+            <button class="modal-close" id="formClose3">×</button>
+            <h2 class="modal-title" data-en="Add Image" data-uk="Додати зображення">Додати зображення</h2>
+            <form id="imageForm">
+                <div class="form-group">
+                    <label data-en="Image URL" data-uk="URL зображення">URL зображення</label>
+                    <input type="url" id="imageUrl" placeholder="https://example.com/image.jpg" required>
+                </div>
+                <div class="form-group">
+                    <label data-en="Category" data-uk="Категорія">Категорія</label>
+                    <select id="imageCategory" required>
+                        <option value="photography" data-en="Photography" data-uk="Фотографія">Фотографія</option>
+                        <option value="design" data-en="Design" data-uk="Дизайн">Дизайн</option>
+                        <option value="art" data-en="Art" data-uk="Мистецтво">Мистецтво</option>
+                    </select>
+                </div>
+                <button type="submit" class="hero-btn" data-en="Save Image" data-uk="Зберегти зображення">Зберегти зображення</button>
+            </form>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2026 Voss Ekobi. Усі права захищені.</p>
+        <p>&copy; 2026 Voss Ekobi. <span data-en="All rights reserved." data-uk="Усі права захищені.">Усі права захищені.</span></p>
     </footer>
 
     <script src="script.js"></script>
