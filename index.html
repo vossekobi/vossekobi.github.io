@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Voss Ekobi — мультидисциплінарний митець. Історії, звуки та візуальні образи.">
+    <meta property="og:title" content="Voss Ekobi — Stories, Sounds & Visions">
+    <meta property="og:description" content="Мультидисциплінарний митець, що поєднує слово, звук та візуальні образи">
+    <meta property="og:image" content="https://placehold.co/1200x630/0d0d0d/c9a84c?text=Voss+Ekobi">
+    <meta property="og:type" content="website">
+    <title>Voss Ekobi — Історії, Звуки та Образы</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-logo">VE</div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="header-inner">
+            <a href="#" class="logo">VOSS <span>EKOBI</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#about">Про мене</a></li>
+                    <li><a href="#stories">Історії</a></li>
+                    <li><a href="#music">Музика</a></li>
+                    <li><a href="#gallery">Галерея</a></li>
+                    <li><a href="#contact">Контакти</a></li>
+                </ul>
+            </nav>
+            <div class="header-controls">
+                <button class="lang-switch" id="langSwitch">EN</button>
+                <button class="theme-toggle" id="themeToggle">
+                    <i data-lucide="sun"></i>
+                </button>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-geometry" id="heroGeometry"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">VOSS EKOBI</h1>
+            <p class="hero-subtitle">ІСТОРІЇ • ЗВУКИ • ОБРАЗИ</p>
+            <a href="#about" class="hero-btn">ДІЗНАТИСЯ БІЛЬШЕ</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <h2 class="section-title">Про мене</h2>
+        <div class="about">
+            <div class="about-image">
+                <img src="https://placehold.co/500x500/1a1a1a/c9a84c?text=Voss+Ekobi" alt="Voss Ekobi">
+            </div>
+            <div class="about-content">
+                <p>Привіт! Я мультидисциплінарний митець, котрий працює на перетині літератури, музики та візуального мистецтва.</p>
+                <p>Мої роботи досліджують глибокі людські емоції, складні соціальні явища та незвідані куточки внутрішнього світу.</p>
+                <p>Кожна історія, кожна композиція, кожен образ — це запрошення до діалогу, спроба розділити те, що боліло, радувало, або спантеличило мене.</p>
+                <div class="about-quote">
+                    "Мистецтво — це розмова без слів, яка одночасно говорить усім мовам"
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stories Section -->
+    <section id="stories" class="stories-section">
+        <h2 class="section-title">Історії</h2>
+        <div class="stories-grid" id="storiesGrid">
+            <div class="empty-state">
+                <div class="empty-state-icon">📖</div>
+                <p>Історії будуть додані незабаром</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Section -->
+    <section id="music" class="music-section">
+        <h2 class="section-title">Музика</h2>
+        <div class="music-container" id="musicContainer">
+            <div class="music-empty">
+                <p>🎵 Музичні композиції будуть додані незабаром</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <h2 class="section-title">Галерея</h2>
+        <div class="gallery-filters">
+            <button class="filter-btn active" data-filter="all">Все</button>
+            <button class="filter-btn" data-filter="photography">Фотографія</button>
+            <button class="filter-btn" data-filter="design">Дизайн</button>
+            <button class="filter-btn" data-filter="art">Мистецтво</button>
+        </div>
+        <div class="gallery-grid" id="galleryGrid">
+            <div class="empty-state">
+                <div class="empty-state-icon">🖼️</div>
+                <p>Галерея скоро буде заповнена</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">Контакти</h2>
+        <div class="contact-content">
+            <p>Бажаєте обговорити проект або просто поговорити?</p>
+            <div class="contact-links">
+                <a href="mailto:contact@vossekobi.com" class="contact-link">✉️ Email</a>
+                <a href="https://twitter.com" target="_blank" class="contact-link">𝕏 Twitter</a>
+                <a href="https://instagram.com" target="_blank" class="contact-link">📷 Instagram</a>
+                <a href="https://linkedin.com" target="_blank" class="contact-link">💼 LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Modal -->
+    <div class="modal" id="storyModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">×</button>
+            <div class="modal-controls">
+                <button class="font-btn" id="fontSmaller">−</button>
+                <button class="font-btn" id="fontLarger">+</button>
+            </div>
+            <h2 class="modal-title" id="modalTitle"></h2>
+            <div class="modal-text" id="modalText"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Voss Ekobi. Усі права захищені.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
